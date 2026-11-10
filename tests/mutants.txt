@@ -1,0 +1,28 @@
+src/zipfile/reader.mojo|if L - p < 46:|if L - p < 45:
+src/zipfile/reader.mojo|if start_dir < 0:|if start_dir <= 0:
+src/zipfile/reader.mojo|if x.extract_version > MAX_EXTRACT_VERSION:|if x.extract_version >= MAX_EXTRACT_VERSION:
+src/zipfile/reader.mojo|x.header_offset += concat|x.header_offset -= concat
+src/zipfile/reader.mojo|var wstart = max(n - ZIP_MAX_COMMENT - 22, 0)|var wstart = max(n - ZIP_MAX_COMMENT - 21, 0)
+src/zipfile/reader.mojo|if reloff > offset:|if reloff >= offset:
+src/zipfile/reader.mojo|if diskno != 0 or disks > 1:|if diskno != 0 or disks > 2:
+src/zipfile/reader.mojo|or sz + 12 != 56 + extrasz:|or sz + 11 != 56 + extrasz:
+src/zipfile/reader.mojo|if fname_str != zi.orig_filename:|if fname_str != zi.filename:
+src/zipfile/reader.mojo|data_start + zi.compress_size > zi._end_offset|data_start + zi.compress_size >= zi._end_offset
+src/zipfile/reader.mojo|and zi._end_offset != zi.header_offset:|and True:
+src/zipfile/reader.mojo|var take = min(k, F)|var take = min(k, F + 1)
+src/zipfile/reader.mojo|var eof = r.status == INF_END or k >= C|var eof = r.status == INF_END or k > C
+src/zipfile/zipinfo.mojo|if self.compress_size == 0xFFFFFFFF:|if self.compress_size == 0xFFFFFFFE:
+src/zipfile/zipinfo.mojo|if Int(data[0]) == 1 and|if Int(data[0]) >= 1 and
+src/zipfile/zipinfo.mojo|put16(extra, 16)|put16(extra, 17)
+src/zipfile/zipinfo.mojo|var ascii = True|var ascii = False
+src/zipfile/writer.mojo|zinfo.flag_bits = MASK_UTF_FILENAME|zinfo.flag_bits = 0
+src/zipfile/writer.mojo|* 1.05 >|* 1.0 >
+src/zipfile/writer.mojo|zinfo.external_attr = 0o600 << 16|zinfo.external_attr = 0o644 << 16
+src/zipfile/writer.mojo|if count > self.filecount_limit:|if count >= self.filecount_limit:
+src/zipfile/writer.mojo|put16(tail, 45)|put16(tail, 46)
+src/deflate/crc32.mojo|var c = ~start|var c = start
+src/deflate/inflate.mojo|if ln != (nln ^ 0xFFFF):|if ln != (nln ^ 0xFFFE):
+src/deflate/inflate.mojo|rep = 3 + b.take(2)|rep = 4 + b.take(2)
+src/deflate/deflate.mojo|if stored_len + 4 <= opt_lenb and buf_off >= 0:|if stored_len + 4 < opt_lenb and buf_off >= 0:
+src/deflate/deflate.mojo|self.max_chain_length = Int(_CFG[self.level * 5 + 3])|self.max_chain_length = Int(_CFG[self.level * 5 + 2])
+
